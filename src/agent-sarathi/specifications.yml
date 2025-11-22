@@ -1,0 +1,38 @@
+# This YAML was auto-generated based on an architecture
+# designed in LangGraph Builder (https://build.langchain.com).
+#
+# The YAML was used by langgraph-gen (https://github.com/langchain-ai/langgraph-gen-py)
+# to generate a code stub for a LangGraph application that follows the architecture.
+#
+# langgraph-gen is an open source CLI tool that converts YAML specifications into LangGraph code stubs.
+#
+# The code stub generated from this YAML can be found in stub.ts.
+#
+# A placeholder implementation for the generated stub can be found in implementation.ts.
+
+name: AgentSarathi
+nodes:
+  - name: n1_ProcessPrompt
+  - name: n2_FilterGitQuery
+  - name: n3_RequireGitQuery
+  - name: n4_CheckForAction
+  - name: n5_GitToolCalls
+  - name: n6_RespondOnNoAction
+edges:
+  - from: __start__
+    to: n1_ProcessPrompt
+  - from: n1_ProcessPrompt
+    condition: ce1_ChunkingFailed
+    paths: [n1_ProcessPrompt, n2_FilterGitQuery]
+  - from: n2_FilterGitQuery
+    condition: ce2_FilterGitRelatedQuery
+    paths: [__end__, n3_RequireGitQuery, n4_CheckForAction]
+  - from: n3_RequireGitQuery
+    to: n2_FilterGitQuery
+  - from: n4_CheckForAction
+    condition: ce3_CheckForToolCall
+    paths: [n5_GitToolCalls, n6_RespondOnNoAction]
+  - from: n5_GitToolCalls
+    to: n2_FilterGitQuery
+  - from: n6_RespondOnNoAction
+    to: n2_FilterGitQuery
