@@ -5,7 +5,7 @@ import {
 
 export function Gemini(input: GoogleGenerativeAIChatInput) {
 	return new ChatGoogleGenerativeAI({
-		apiKey: process.env.GOOGLE_AI_STUDIO_API_KEY,
+		apiKey: process.env.GOOGLE_GEMINI_API_KEY,
 		...input,
 	});
 }

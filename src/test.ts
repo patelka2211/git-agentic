@@ -1,10 +1,9 @@
-import { Sarathi } from "./agent-sarathi/implementation";
+import Sarathi from "./agent-sarathi";
 
 (async () => {
-	const result = await Sarathi.invoke({
-		userPrompt:
-			"create a branch named 'hello-world' and then commit all the changes",
+	const response = await Sarathi.invoke({
+		userPrompt: "hi. what can you do for me?",
 	});
 
-	console.log(result);
+	console.log(response.finalOutput);
 })();
