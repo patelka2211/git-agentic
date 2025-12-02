@@ -61,6 +61,7 @@ async function main() {
 		question = nextQuestion;
 		nextQuestion = null;
 		console.clear();
+		console.log(`\n[you]: ${question}`);
 	} else {
 		SarathiIntro();
 
