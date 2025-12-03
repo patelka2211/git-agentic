@@ -50,3 +50,8 @@ This project is still in very early stage and is being developed. It currently o
 ## More
 
 The initial ideation and development has been done by [Kartavya Patel](https://kartavyapatel.com). This project was the final project of the Generative A.I. and Software Development Lifecycle course taken by Kartavya at [FAU](https://fau.edu).
+
+## Examples
+
+![](./examples/example1.png)
+![](./examples/example2.png)
